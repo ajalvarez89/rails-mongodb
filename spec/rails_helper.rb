@@ -8,13 +8,14 @@ require 'rspec/rails'
 require 'factory_bot_rails'
 require 'database_cleaner'
 require 'capybara/rails'
+require 'mongoid-rspec'
 
 RSpec.configure do |config|
   # Remove this line to enable support for ActiveRecord
   config.use_active_record = false
   config.use_transactional_fixtures = false
   config.include FactoryBot::Syntax::Methods
-
+  config.include Mongoid::Matchers, type: :model
   #helpers for sessions with devise
   config.include Warden::Test::Helpers
   config.include Devise::Test::ControllerHelpers, type: 'controller'
