@@ -1,0 +1,8 @@
+.tasks.new-page
+  .card
+    .card-body
+      %h2 Nueva Tarea
+
+      = render 'form'
+
+      = link_to t('common.back'), tasks_path, class: 'btn-interaction'

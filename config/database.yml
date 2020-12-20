@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  user: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: organizador_development_2
+  host: localhost
+
+test:
+  <<: *default
+  database: organizador_test_2
+  host: localhost
+
+production:
+  <<: *default
+  database: organizador_production_2
+  username: organizador
+  password: <%= ENV['ORGANIZADOR_DATABASE_PASSWORD'] %>
