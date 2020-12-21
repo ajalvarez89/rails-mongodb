@@ -11,7 +11,7 @@
                 %span.small= "[##{task.code}]"
                 = task.name
                 %span.task-category
-                  = task.category.name
+                  = "#{task.category.name} | status: #{task.status} "
               .task-description= task.description
               .task-dates
                 %b= task.owner.email
