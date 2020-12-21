@@ -20,6 +20,7 @@ RSpec.configure do |config|
   config.include Warden::Test::Helpers
   config.include Devise::Test::ControllerHelpers, type: 'controller'
   config.include Devise::Test::IntegrationHelpers, type: 'request'
+  config.include Devise::Test::IntegrationHelpers, type: 'system'
   config.before(:suite) do
     DatabaseCleaner.orm = 'mongoid'
     DatabaseCleaner.clean
@@ -31,6 +32,16 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
+  end
+
+  config.before(:each, type: :system) do
+    driven_by(:rack_test)
+  end
+
+  Selenium::WebDriver::Chrome::Service.driver_path = "/Users/ajalvarez/Downloads/chromedriver"
+
+  config.before(:each, type: :system, js: true) do
+    driven_by(:selenium_chrome_headless)
   end
 
   config.infer_spec_type_from_file_location!

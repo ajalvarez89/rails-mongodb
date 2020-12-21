@@ -41,6 +41,7 @@ group :test do
   gem 'mongoid-rspec'
   # request commands test
   gem 'rails-controller-testing'
+  gem 'selenium-webdriver'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
