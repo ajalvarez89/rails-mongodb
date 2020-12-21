@@ -19,6 +19,7 @@ RSpec.configure do |config|
   #helpers for sessions with devise
   config.include Warden::Test::Helpers
   config.include Devise::Test::ControllerHelpers, type: 'controller'
+  config.include Devise::Test::IntegrationHelpers, type: 'request'
   config.before(:suite) do
     DatabaseCleaner.orm = 'mongoid'
     DatabaseCleaner.clean
