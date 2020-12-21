@@ -9,6 +9,7 @@ require 'factory_bot_rails'
 require 'database_cleaner'
 require 'capybara/rails'
 require 'mongoid-rspec'
+require 'sucker_punch/testing/inline'
 
 RSpec.configure do |config|
   # Remove this line to enable support for ActiveRecord

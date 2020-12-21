@@ -17,6 +17,10 @@ gem 'devise'
 gem 'cocoon'
 gem 'cancancan'
 gem 'font-awesome-sass', '~> 5.12.0'
+
+#background jobs without redis
+gem 'sucker_punch'
+
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
